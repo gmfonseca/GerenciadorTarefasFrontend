@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import $ from 'jquery';
 
 import api from '../services/api';
+import CreateTarefa from './CreateTarefa';
 
 import './Main.css';
 
@@ -9,8 +10,9 @@ export default function Main(){
 
     const [tarefas, setTarefas] = useState([]);
     const [aba, setAba] = useState('todos');
+    const [update, setUpdate] = useState(false);
 
-    // Disparado toda vez que a aba for alterada
+    // Disparado toda vez que a aba ou o estado 'update' for alterado
     useEffect(() => {
         let filter;
 
@@ -36,12 +38,12 @@ export default function Main(){
 
         loadTarefas();
 
-    }, [aba]);
+    }, [aba, update]);
 
-    // Alterar a aba
+    //Alterar a aba
     function handleFilter(target){
 
-        // Apenas alterar valor de ${aba} caso ja nao esteja selecionada
+        //Apenas alterar valor de ${aba} caso nao esteja selecionada
         if(target.className !== `${aba} selected`){
             $(`.${aba}`).removeClass("selected");
 
@@ -58,7 +60,7 @@ export default function Main(){
         $(id).slideToggle()
     }
 
-    // Carregar todas as tarefas retornadas do back-end
+    //Carregar todas as tarefas retornadas do back-end
     function buildTarefas(){
         if(tarefas.length === 0) return (<p className="no-task">Nenhuma tarefa encontrada.</p>);
 
@@ -84,6 +86,8 @@ export default function Main(){
             </div>
 
             <div className="content">
+                
+                <CreateTarefa createTarefa={() => setUpdate(!update)} />
                 
                 <div className="abas">
                     <ul>
