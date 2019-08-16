@@ -70,7 +70,7 @@ export default function Main(){
                     <h2 className='titulo'>{tarefa.titulo.toUpperCase()}</h2>
                     <p>{tarefa.descricao}</p>
                     {(tarefa.concluido)
-                        ? (<img className="resolucao" id={`resolucao${index+1}`} src={tarefa.imagePath} alt={tarefa.imagePath}/>)
+                        ? (<img className="resolucao" id={`resolucao${index+1}`} src={`${api.defaults.baseURL}/tarefas/${tarefa.id}/resolucao`} alt={tarefa.titulo}/>)
                         : ""
                     }
                     
