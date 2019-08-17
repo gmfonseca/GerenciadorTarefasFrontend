@@ -1,0 +1,152 @@
+
+/*
+* BTN ADD-TAREFA
+*/
+.rmv-btn{
+    border: 1px solid #9c3628 ;
+    background: #dd4b39;
+    float: right;
+    display: block;
+    margin: -15px -12px 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #FFF;
+    padding: 1px 5px;
+    border-radius: 7px;
+}
+
+/*
+* MODAL
+*/
+
+.rmv-modal {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rmv-modal .rmv-modal-content {
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    height: 200px;
+    background: #FFF;
+    border-radius: 0 0 10px 10px;
+}
+
+.rmv-modal-content .header {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 0;
+    background: #dd4b39;
+}
+
+.rmv-modal-content .header .title {
+    height: 100%;
+    padding: 20px;
+    color: #FFF;
+    float: left;
+}
+
+.rmv-modal-content .header .close {
+    height: 100%;
+    padding: 10px 20px;
+    float: right;
+    border: none;
+    color: #FFF;
+    background: #dd4b39;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.rmv-modal-content .header .close:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.rmv-modal-content form {
+    max-width: 100%;
+    margin: 20px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.rmv-modal-content form input {
+    height: 30px;
+}
+
+.rmv-modal-content textarea {
+    resize: none;
+    height: 60px;
+}
+
+.rmv-modal-content form input,
+.rmv-modal-content form textarea {
+    width: 75%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 3px 5px;
+}
+
+.rmv-modal-content form input::placeholder,
+.rmv-modal-content form textarea::placeholder {
+    color: #999;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 18px;
+}
+
+.rmv-modal-content .remove-btn,
+.rmv-modal-content .cancel-btn {
+    margin: 20px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+
+.rmv-btn:hover,
+.rmv-modal-content .remove-btn {
+    background: #dd4b39;
+    border: 1px solid #9c3628;
+    color: #EEE;
+    cursor: pointer;
+}
+
+.rmv-modal-content .remove-btn:hover {
+    background: #9c3628;
+}
+
+.rmv-btn:active,
+.rmv-modal-content .remove-btn:active {
+    background:#812b1f;
+}
+
+.rmv-modal-content .cancel-btn {
+    background: #999;
+    border: 1px solid #CCC; 
+}
+
+.rmv-modal-content .cancel-btn:hover {
+    background: #777;
+}
+
+.rmv-modal-content .cancel-btn:active {
+    background: #555;
+}

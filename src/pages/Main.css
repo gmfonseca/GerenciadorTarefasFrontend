@@ -110,7 +110,7 @@
 }
 
 .completed {
-    cursor: pointer;
+    cursor: cell;
 }
 
 .completed h2 {

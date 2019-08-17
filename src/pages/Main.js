@@ -3,6 +3,7 @@ import $ from 'jquery';
 
 import api from '../services/api';
 import CreateTarefa from './CreateTarefa';
+import RemoveTarefa from './RemoveTarefa';
 
 import './Main.css';
 
@@ -67,12 +68,15 @@ export default function Main(){
         return tarefas.map((tarefa, index) => (
             <li key={tarefa.id} className={(tarefa.concluido? 'completed':'')}>
                 <div className="tarefa" onClick={e => toggleImage(index+1)}>
-                    <h2 className='titulo'>{tarefa.titulo.toUpperCase()}</h2>
-                    <p>{tarefa.descricao}</p>
-                    {(tarefa.concluido)
-                        ? (<img className="resolucao" id={`resolucao${index+1}`} src={`${api.defaults.baseURL}/tarefas/${tarefa.id}/resolucao`} alt={tarefa.titulo}/>)
-                        : ""
-                    }
+                    
+                <RemoveTarefa tarefaId={tarefa.id} deleteTarefa={() => setUpdate(!update)} />
+
+                <h2 className='titulo'>{tarefa.titulo.toUpperCase()}</h2>
+                <p>{tarefa.descricao}</p>
+                {(tarefa.concluido)
+                    ? (<img className="resolucao" id={`resolucao${index+1}`} src={`${api.defaults.baseURL}/tarefas/${tarefa.id}/resolucao`} alt={tarefa.titulo}/>)
+                    : ""
+                }
                     
                 </div>
             </li>
